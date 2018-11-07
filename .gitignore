@@ -1,0 +1,6 @@
+.idea
+.env
+*.iml
+mysql
+src
+.DS_Store

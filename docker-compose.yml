@@ -1,0 +1,25 @@
+version: '3.1'
+services:
+  wordpress:
+    build: ./_docker
+    image: wordpress_env:latest
+    restart: always
+    links:
+      - redis
+      - mysql
+    ports:
+      - 80:80
+    volumes:
+      - ./src:/var/www/html
+
+  mysql:
+    image: mysql:5.7
+    restart: always
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: ${WORDPRESS_DB_PASSWORD}
+  redis:
+    image: redis:alpine
