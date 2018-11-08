@@ -10,6 +10,13 @@ services:
       - 80:80
     volumes:
       - ./src:/var/www/html
+      - ./apache2/sites-enabled:/etc/apache2/sites-enabled
+      - /etc/letsencrypt/live/:/etc/letsencrypt/live
+    environment:
+      WORDPRESS_DB_HOST:
+      WORDPRESS_DB_USER:
+      WORDPRESS_DB_NAME:
+      WORDPRESS_DB_PASSWORD:
 
   mysql:
     image: mysql:5.7
