@@ -8,6 +8,7 @@ services:
       - mysql
     ports:
       - 80:80
+      - 443:443
     volumes:
       - ./src:/var/www/html
       - ./apache2/sites-enabled:/etc/apache2/sites-enabled
