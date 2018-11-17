@@ -12,7 +12,7 @@ services:
     volumes:
       - ./src:/var/www/html
       - ./apache2/sites-enabled:/etc/apache2/sites-enabled
-      - /etc/letsencrypt/live/:/etc/letsencrypt/live
+      - /etc/letsencrypt:/etc/letsencrypt
     environment:
       WORDPRESS_DB_HOST:
       WORDPRESS_DB_USER:
