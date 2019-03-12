@@ -41,5 +41,4 @@ services:
       DD_PROCESS_AGENT_ENABLED: 'true'
       DD_LOGS_ENABLED: 'true'
       DD_LOGS_CONFIG_CONTAINER_COLLECT_ALL: 'true'
-      DD_AC_EXCLUDE: 'image:.*'
-      DD_AC_INCLUDE: 'image:.*wordpress.*'
+      DD_AC_EXCLUDE: 'image:.*datadog.*'

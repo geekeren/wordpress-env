@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
         libjpeg-dev \
         libpng-dev \
         zlib1g-dev \
+        libapache2-mod-security2 \
     && docker-php-ext-install iconv mcrypt zip \
     && docker-php-ext-configure gd \
         --enable-gd-native-ttf \
@@ -16,4 +17,4 @@ RUN apt-get update && apt-get install -y \
     && docker-php-ext-install mbstring \
     && docker-php-ext-enable gd \
     && rm -rf /var/lib/apt/lists/*
-RUN a2enmod ssl http2 headers
+RUN a2enmod ssl http2 headers security2
