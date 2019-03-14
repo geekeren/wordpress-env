@@ -1,4 +1,4 @@
-FROM wordpress:4.9.8-php5.6-apache
+FROM wordpress:5.1.1-php7.2-apache
 RUN rm -rf /usr/src/wordpress
 RUN apt-get update && apt-get install -y \
     libfreetype6-dev \
