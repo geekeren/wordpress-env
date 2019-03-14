@@ -6,9 +6,10 @@ RUN apt-get update && apt-get install -y \
         libjpeg-dev \
         libpng-dev \
         zlib1g-dev \
-        libapache2-mod-security2 \
-    && pecl install mcrypt-1.0.2 \
-    && docker-php-ext-install iconv mcrypt zip \
+        libapache2-mod-security2
+RUN pecl install mcrypt-1.0.2 \
+    && docker-php-ext-enable mcrypt \
+    && docker-php-ext-install iconv zip \
     && docker-php-ext-configure gd \
         --enable-gd-native-ttf \
         --with-freetype-dir=/usr/include/freetype2 \
